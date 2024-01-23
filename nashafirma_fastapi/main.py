@@ -14,15 +14,15 @@ from nashafirma_fastapi.database.db import get_db
 
 app = FastAPI()
 origins = ["*"]
-# logger = get_logger(__name__)
+logger = get_logger(__name__)
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
