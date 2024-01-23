@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel, EmailStr, Field, validator
 
 
@@ -8,19 +10,8 @@ class InProduct(BaseModel):
 
 class OutProduct(InProduct):
     id: int = Field(1, gt=0)
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
         from_attributes = True
-
-
-
-
-
-
-
-
-
-
-
-
-
