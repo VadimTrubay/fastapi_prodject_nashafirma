@@ -2,14 +2,11 @@ from fastapi import HTTPException, status
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
-import os
 
-from dotenv import load_dotenv
-
-load_dotenv()
+from nashafirma_fastapi.conf.config import settings
 
 
-SQLALCHEMY_DATABASE_URL = os.getenv('SQLALCHEMY_DATABASE_URL')
+SQLALCHEMY_DATABASE_URL = settings.sqlalchemy_database_url
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True, max_overflow=5)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

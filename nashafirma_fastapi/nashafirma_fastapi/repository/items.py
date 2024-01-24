@@ -9,7 +9,7 @@ async def get_item_by_id(item_id: int, db: Session):
     return item
 
 async def get_items(order_id: int, limit: int, offset: int, db: Session):
-    items = db.query(Item).all().filter(Item.id == order_id).limit(limit).offset(offset)
+    items = db.query(Item).filter(Item.order_id == order_id).limit(limit).offset(offset).all()
     return items
 
 # async def get_item(item_id: int, db: Session):

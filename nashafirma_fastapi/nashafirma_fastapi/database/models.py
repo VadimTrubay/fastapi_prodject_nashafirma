@@ -5,9 +5,8 @@ from sqlalchemy.sql.schema import ForeignKey
 from sqlalchemy.sql.sqltypes import DateTime
 from sqlalchemy.orm import relationship
 
-from nashafirma_fastapi.database.db import engine
-
 Base = declarative_base()
+
 
 class Role(enum.Enum):
     admin: str = 'admin'
@@ -30,6 +29,8 @@ class Order(Base):
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
     done = Column(Boolean, default=False)
     user = Column(ForeignKey('users.id', ondelete='CASCADE'))
+    user_id = relationship('User', backref="orders", lazy='joined')
+
 
 class Item(Base):
     __tablename__ = "items"
@@ -38,27 +39,35 @@ class Item(Base):
     note = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), default=func.now())
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
-
     order_id = Column(ForeignKey('orders.id', ondelete='CASCADE'))
     order = relationship('Order', backref="items", foreign_keys=[order_id])
-
     product_id = Column(ForeignKey('products.id', ondelete='CASCADE'))
-    product = relationship('Product', backref="items", foreign_keys=[product_id])
+    product = relationship('Product', backref="items", lazy='joined')
+
 
 class User(Base):
     __tablename__ = "users"
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50))
     email = Column(String(150), nullable=False, unique=True)
     password = Column(String(255), nullable=False)
+    roles = Column('roles', Enum(Role), default=Role.user)
+    confirmed = Column(Boolean, default=False)
+    is_active = Column(Boolean, default=True)
+    refresh_token = Column(String(255), nullable=True)
+    password_reset_token = Column(String(255), nullable=True)
+    created_at = Column(DateTime(timezone=True), default=func.now())
+    updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
+
+
+class Profile(Base):
+    __tablename__ = 'profiles'
+    id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String(150), nullable=True)
     last_name = Column(String(150), nullable=True)
     phone = Column(String(150), nullable=True)
-    refresh_token = Column(String(255), nullable=True)
-    password_reset_token = Column(String(255), nullable=True)
     avatar = Column(String(255), nullable=True)
-    roles = Column('roles', Enum(Role), default=Role.user)
-    confirmed = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), default=func.now())
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
-    api_key = Column(String(100), nullable=True)
+    user = Column(ForeignKey('users.id', ondelete='CASCADE'))
+    user_id = relationship('User', backref="profiles", lazy='joined')

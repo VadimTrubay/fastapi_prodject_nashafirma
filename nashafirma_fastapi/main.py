@@ -1,3 +1,4 @@
+
 import time
 
 import redis.asyncio as redis
@@ -9,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from nashafirma_fastapi.conf.config import settings
 from fastapi_limiter import FastAPILimiter
 
-from nashafirma_fastapi.routes import orders, products, items, users, auth
+from nashafirma_fastapi.routes import orders, products, items, users, auth, profiles
 from nashafirma_fastapi.database.db import get_db
 
 app = FastAPI()
@@ -23,6 +24,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth.router, prefix="/api")
+app.include_router(users.router, prefix="/api")
+# app.include_router(profiles.router, prefix="/api")
+app.include_router(products.router, prefix="/api")
+app.include_router(items.router, prefix="/api")
+app.include_router(orders.router, prefix="/api")
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
@@ -59,8 +67,3 @@ def healthchecker(db: Session = Depends(get_db)):
 #     await FastAPILimiter.init(r)
 
 
-app.include_router(auth.router, prefix="/api")
-app.include_router(users.router, prefix="/api")
-app.include_router(products.router, prefix="/api")
-app.include_router(orders.router, prefix="/api")
-app.include_router(items.router, prefix="/api")
