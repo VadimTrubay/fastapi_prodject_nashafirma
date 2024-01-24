@@ -8,9 +8,9 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 
-class Role(enum.Enum):
-    admin: str = 'admin'
-    user: str = 'user'
+# class Role(enum.Enum):
+#     admin: int = 1
+#     user: int = 0
 
 
 class Product(Base):
@@ -35,7 +35,7 @@ class Order(Base):
 class Item(Base):
     __tablename__ = "items"
     id = Column(Integer, primary_key=True, index=True)
-    weight = Column(Float, nullable=True, default=0)
+    weight = Column(Float, nullable=True, default=0.0)
     note = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), default=func.now())
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
@@ -51,8 +51,8 @@ class User(Base):
     username = Column(String(50))
     email = Column(String(150), nullable=False, unique=True)
     password = Column(String(255), nullable=False)
-    roles = Column('roles', Enum(Role), default=Role.user)
-    confirmed = Column(Boolean, default=False)
+    # roles = Column('roles', Enum(Role), default=Role.user)
+    is_superuser = Column(Boolean, default=False)
     is_active = Column(Boolean, default=True)
     refresh_token = Column(String(255), nullable=True)
     password_reset_token = Column(String(255), nullable=True)

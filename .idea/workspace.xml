@@ -5,25 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdb27b4-f0fd-4e9a-b646-c6346b9ae30b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/01424301238b_init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/1c7e8c2f0ec5_init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/f01ad6e8f780_init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/migration/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/migration/env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nashafirma_fastapi/migration/script.py.mako" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/16a49d3e8033_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/5d74c405d133_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/5e42e313e288_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/conf/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/01424301238b_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/1c7e8c2f0ec5_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/6864c040d703_profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/9423dfb2e588_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/f01ad6e8f780_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/script.py.mako" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/repository/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/repository/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/routes/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/routes/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/utils/py_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/utils/py_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/poetry.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/pyproject.toml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +49,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/work_it/github/fastapi_prodject_nashafirma/nashafirma_fastapi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/work_it/github/fastapi_prodject_nashafirma&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -62,8 +58,8 @@
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma\nashafirma_fastapi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\nashafirma_fastapi" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma\temp" />
+      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\nashafirma_fastapi" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma" />
     </key>
   </component>

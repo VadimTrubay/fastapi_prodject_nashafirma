@@ -1,37 +1,35 @@
-# from datetime import datetime
-# from typing import Optional
-# from pydantic import BaseModel, Field, EmailStr, validator
-# from pydantic.types import date
-#
+from datetime import datetime
+from typing import Optional
+from pydantic import BaseModel, Field, EmailStr, validator
+from pydantic.types import date
+
 # from nashafirma_fastapi.database.models import Role
-#
-#
-#
-# class UserModel(BaseModel):
-#     username: str = Field(min_length=6, max_length=12)
-#     email: EmailStr
-#     password: str = Field(min_length=6, max_length=20)
-#
-#
-# class UserDb(BaseModel):
-#     id: int
-#     username: str
-#     email: EmailStr
-#     avatar: str
-#     created_at: date
-#
-#     class Config:
-#         orm_mode = True
-#
-#
-# class UserResponse(BaseModel):
-#     user: UserDb
-#     detail: str = "User successfully created"
-#
-#     class Config:
-#         orm_mode = True
-#
-#
+
+class UserDb(BaseModel):
+    id: int
+    username: str
+    email: EmailStr
+    avatar: str
+    created_at: date
+
+    class Config:
+        orm_mode = True
+
+class UserModel(BaseModel):
+    username: str = Field(min_length=6, max_length=12)
+    email: EmailStr
+    password: str = Field(min_length=6, max_length=20)
+
+
+class UserResponse(BaseModel):
+    user: UserDb
+    detail: str = "User successfully created"
+
+    class Config:
+        orm_mode = True
+
+
+
 # # class UserProfileResponse(BaseModel):
 # #     id: int
 # #     username: str
