@@ -5,26 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdb27b4-f0fd-4e9a-b646-c6346b9ae30b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/alembic/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/alembic/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/alembic/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/conf/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/database/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/database/fu_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/database/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/repository/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/repository/orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/repository/products.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/repository/users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/routes/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/routes/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/routes/orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/routes/products.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/routes/profiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/schemas/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/schemas/orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/schemas/products.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/schemas/profiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/schemas/users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/services/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/poetry.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/01424301238b_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/1c7e8c2f0ec5_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/6864c040d703_profile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/9423dfb2e588_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/alembic/versions/f01ad6e8f780_init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/migration/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/nashafirma_fastapi/schemas/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/poetry.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/pyproject.toml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,24 +79,29 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/work_it/github/fastapi_prodject_nashafirma&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/work_it/github/fastapi_prodject_nashafirma/app&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\app\app" />
+      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\app" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma\nashafirma_fastapi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\app\app" />
+      <recent name="D:\work_it\github\fastapi_prodject_nashafirma\app" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma\temp" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma\nashafirma_fastapi" />
       <recent name="D:\work_it\github\fastapi_prodject_nashafirma" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="fastapi_prodject_nashafirma" />
       <option name="ENV_FILES" value="" />
@@ -78,6 +116,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nashafirma_fastapi/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fastapi_prodject_nashafirma" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,6 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
       </list>

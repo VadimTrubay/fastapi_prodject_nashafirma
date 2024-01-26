@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "nashafirma-fastapi"
+version = "0.1.0"
+description = "nashafirma_fastapi"
+authors = ["VadimTrubay <vadnetvadnet@ukr.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "0.109.0"
+uvicorn = "0.26.0"
+sqlalchemy = "2.0.25"
+psycopg2 = "2.9.9"
+redis = "5.0.1"
+pydantic = {version = "2.5.3", extras = ["email"]}
+alembic = "1.13.1"
+environ = "1.0"
+python-dotenv = "1.0.0"
+libgravatar = "^1.0.4"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+fastapi-mail = "^1.4.1"
+cloudinary = "^1.38.0"
+python-multipart = "^0.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
