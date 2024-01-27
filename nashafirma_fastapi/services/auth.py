@@ -107,7 +107,7 @@ class Auth:
             if user is None:
                 raise self.credentials_exception
             self.r.set(f"user:{email}", pickle.dumps(user))  # noqa
-            self.r.expire(f"user:{email}", 5)  # noqa need change this time of 900
+            self.r.expire(f"user:{email}", 20)  # noqa need change this time of 900
         else:
             user = pickle.loads(user)  # noqa
 
@@ -127,7 +127,7 @@ class Auth:
 
     def create_email_token(self, data: dict):
         to_encode = data.copy()
-        expire = datetime.utcnow() + timedelta(days=7)
+        expire = datetime.utcnow() + timedelta(days=1)
         to_encode.update({"iat": datetime.utcnow(), "exp": expire, "scope": "email_token"})
         token = jwt.encode(to_encode, self.SECRET_KEY, algorithm=self.ALGORITHM)
         return token
