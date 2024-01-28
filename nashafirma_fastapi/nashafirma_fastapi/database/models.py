@@ -1,9 +1,8 @@
-from sqlalchemy import (func, Column, Integer, String, Float, Boolean, Date, DateTime)
-
+from sqlalchemy import func, Column, Integer, String, Float, Boolean
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql.schema import ForeignKey
-from sqlalchemy.sql.sqltypes import DateTime, Date
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql.schema import ForeignKey
+from sqlalchemy.sql.sqltypes import Date
 
 Base = declarative_base()
 
@@ -21,8 +20,8 @@ class Order(Base):
     __tablename__ = "orders"
     id = Column(Integer, primary_key=True, index=True)
     done = Column(Boolean, default=False)
-    user = Column(ForeignKey('users.id', ondelete='CASCADE'))
-    user_id = relationship('User', backref="orders", lazy='joined')
+    user = Column(ForeignKey("users.id", ondelete="CASCADE"))
+    user_id = relationship("User", backref="orders", lazy="joined")
     created_at = Column(Date, default=func.current_date())
     updated_at = Column(Date, default=func.current_date(), onupdate=func.current_date())
 
@@ -32,10 +31,10 @@ class Item(Base):
     id = Column(Integer, primary_key=True, index=True)
     weight = Column(Float, nullable=True, default=0.0)
     note = Column(String, nullable=True)
-    order_id = Column(ForeignKey('orders.id', ondelete='CASCADE'))
-    order = relationship('Order', backref="items", foreign_keys=[order_id])
-    product_id = Column(ForeignKey('products.id', ondelete='CASCADE'))
-    product = relationship('Product', backref="items", lazy='joined')
+    order_id = Column(ForeignKey("orders.id", ondelete="CASCADE"))
+    order = relationship("Order", backref="items", foreign_keys=[order_id])
+    product_id = Column(ForeignKey("products.id", ondelete="CASCADE"))
+    product = relationship("Product", backref="items", lazy="joined")
     created_at = Column(Date, default=func.current_date())
     updated_at = Column(Date, default=func.current_date(), onupdate=func.current_date())
 
@@ -49,7 +48,7 @@ class User(Base):
     first_name = Column(String(150), nullable=True)
     last_name = Column(String(150), nullable=True)
     phone = Column(String(150), nullable=True)
-    # avatar = Column(String(350), nullable=True)
+    avatar = Column(String(350), nullable=True)
     confirmed = Column(Boolean, default=False)
     is_superuser = Column(Boolean, default=False)
     refresh_token = Column(String(255), nullable=True)

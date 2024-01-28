@@ -1,10 +1,6 @@
-from typing import List, Type
-
-from libgravatar import Gravatar
-from sqlalchemy.orm import Session
-
 from nashafirma_fastapi.database.models import User
 from nashafirma_fastapi.schemas.users import UserModel, UserUpdate
+from sqlalchemy.orm import Session
 
 
 async def get_user_by_id(user_id: int, db: Session) -> User | None:
@@ -23,9 +19,6 @@ async def get_me(current_user: User, db: Session) -> User | None:
 
 
 async def create_user(body: UserModel, db: Session):
-    # g = Gravatar(body.email)
-    # new_user = User(**body.model_dump(), avatar=g.get_image())
-
     new_user = User(**body.model_dump())
     if len(db.query(User).all()) == 0:  # First user always admin
         new_user.is_superuser = True
@@ -46,8 +39,8 @@ async def update(current_user: User, body: UserUpdate, db: Session):
     return user
 
 
-async def update_avatar(user_id: int, url: str, db: Session) -> User:
-    user = await get_user_by_id(user_id, db)
+async def update_avatar(email, url: str, db: Session) -> User:
+    user = await get_user_by_email(email, db)
     user.avatar = url
     db.commit()
     return user

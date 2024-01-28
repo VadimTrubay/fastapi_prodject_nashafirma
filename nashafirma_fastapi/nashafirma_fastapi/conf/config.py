@@ -2,9 +2,11 @@ from pydantic.v1 import BaseSettings
 
 
 class Settings(BaseSettings):
-    sqlalchemy_database_url: str = 'postgresql+psycopg2://user:password@server:5432/database'
-    secret_key: str = 'secret'
-    algorithm: str = 'HS256'
+    sqlalchemy_database_url: str = (
+        "postgresql+psycopg2://user:password@server:5432/database"
+    )
+    secret_key: str = "secret"
+    algorithm: str = "HS256"
     mail_username: str
     mail_password: str
     mail_from: str
@@ -12,9 +14,9 @@ class Settings(BaseSettings):
     mail_server: str
     redis_host: str
     redis_port: int
-    cloudinary_name: str
-    cloudinary_api_key: int
-    cloudinary_api_secret: str
+    CLOUDINARY_NAME: str
+    CLOUDINARY_API_KEY: str
+    CLOUDINARY_API_SECRET: str
 
     class Config:
         env_file = ".env"

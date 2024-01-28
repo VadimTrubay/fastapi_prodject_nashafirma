@@ -1,5 +1,4 @@
-from typing import Optional
-from pydantic import BaseModel, Field, EmailStr, validator
+from pydantic import BaseModel, Field, EmailStr
 from pydantic.types import datetime
 
 
@@ -20,7 +19,7 @@ class UserResponse(UserModel):
     first_name: str | None
     last_name: str | None
     phone: str | None
-    # avatar: str | None
+    avatar: str | None
     confirmed: bool
     is_superuser: bool
     created_at: datetime
