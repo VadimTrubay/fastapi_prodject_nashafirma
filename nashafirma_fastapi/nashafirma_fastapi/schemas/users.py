@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, EmailStr
-from pydantic.types import datetime
+from pydantic.types import date
 
 
 class UserModel(BaseModel):
@@ -22,16 +22,15 @@ class UserResponse(UserModel):
     avatar: str | None
     confirmed: bool
     is_superuser: bool
-    created_at: datetime
-    updated_at: datetime
+    created_at: date
+    updated_at: date
 
     class Config:
         from_attributes = True
 
 
 class UserFromOrder(UserModel):
-    id: int
-    username: int
+    username: str
 
     class Config:
         from_attributes = True

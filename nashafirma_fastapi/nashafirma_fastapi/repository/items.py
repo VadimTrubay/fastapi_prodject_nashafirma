@@ -1,7 +1,6 @@
-from sqlalchemy.orm import Session
-
 from nashafirma_fastapi.database.models import Item
-from nashafirma_fastapi.schemas.items import ItemModel
+from nashafirma_fastapi.schemas.items import ItemModel, ItemCreate
+from sqlalchemy.orm import Session
 
 
 async def get_item_by_id(item_id: int, db: Session):
@@ -9,12 +8,18 @@ async def get_item_by_id(item_id: int, db: Session):
     return item
 
 
-async def get_items(order_id: int, limit: int, offset: int, db: Session):
-    items = db.query(Item).filter(Item.order_id == order_id).limit(limit).offset(offset).all()
+async def get_items_by_order(order_id: int, limit: int, offset: int, db: Session):
+    items = (
+        db.query(Item)
+        .filter(Item.order_id == order_id)
+        .limit(limit)
+        .offset(offset)
+        .all()
+    )
     return items
 
 
-async def create(body: ItemModel, db: Session):
+async def create(body: ItemCreate, db: Session):
     item = Item(**body.model_dump())
     db.add(item)
     db.commit()

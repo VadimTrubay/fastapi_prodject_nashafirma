@@ -1,14 +1,9 @@
-from datetime import datetime, date
-from pydantic.types import date
-
 from pydantic import BaseModel, Field
-
-from ..schemas.users import UserFromOrder
+from pydantic.types import date
 
 
 class OrderModel(BaseModel):
     done: bool = Field(False)
-
 
 
 class OrderResponse(OrderModel):

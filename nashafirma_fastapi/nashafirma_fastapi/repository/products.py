@@ -1,7 +1,7 @@
-from sqlalchemy.orm import Session
-
 from nashafirma_fastapi.database.models import Product, User
 from nashafirma_fastapi.schemas.products import ProductModel
+from sqlalchemy import or_, Text, cast
+from sqlalchemy.orm import Session
 
 
 async def get_product_by_id(product_id: int, db: Session):
@@ -10,12 +10,14 @@ async def get_product_by_id(product_id: int, db: Session):
 
 
 async def get_products(limit: int, offset: int, db: Session):
-    products = db.query(Product).order_by(Product.product).limit(limit).offset(offset).all()
+    products = (
+        db.query(Product).order_by(Product.product).limit(limit).offset(offset).all()
+    )
     return products
 
 
 async def get_product(product_id: int, db: Session):
-    product = await  get_product_by_id(product_id, db)
+    product = await get_product_by_id(product_id, db)
     return product
 
 
@@ -30,7 +32,7 @@ async def create(body: ProductModel, current_user: User, db: Session):
 
 
 async def update(product_id: int, current_user: User, body: ProductModel, db: Session):
-    product = await  get_product_by_id(product_id, db)
+    product = await get_product_by_id(product_id, db)
     if product:
         if current_user.is_superuser:
             product.product = body.product
@@ -40,7 +42,7 @@ async def update(product_id: int, current_user: User, body: ProductModel, db: Se
 
 
 async def remove(product_id: int, current_user: User, db: Session):
-    product = await  get_product_by_id(product_id, db)
+    product = await get_product_by_id(product_id, db)
     if product:
         if current_user.is_superuser:
             db.delete(product)
@@ -50,7 +52,16 @@ async def remove(product_id: int, current_user: User, db: Session):
 
 def search_products(db: Session, limit: int = 10, offset: int = 0, query: str = None):
     if query:
-        products = (db.query(Product).
-                    filter(Product.product.like(f"%{query}%")).
-                    offset(offset).limit(limit).all())
+        products = (
+            db.query(Product)
+            .filter(
+                or_(
+                    Product.product.ilike(f"%{query}%"),
+                    cast(Product.price, Text).ilike(f"%{query}%"),
+                )
+            )
+            .limit(limit)
+            .offset(offset)
+            .all()
+        )
         return products

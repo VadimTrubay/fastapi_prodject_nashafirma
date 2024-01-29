@@ -29,12 +29,12 @@ class Order(Base):
 class Item(Base):
     __tablename__ = "items"
     id = Column(Integer, primary_key=True, index=True)
-    weight = Column(Float, nullable=True, default=0.0)
+    weight = Column(Float, nullable=True, default=0)
     note = Column(String, nullable=True)
-    order_id = Column(ForeignKey("orders.id", ondelete="CASCADE"))
-    order = relationship("Order", backref="items", foreign_keys=[order_id])
-    product_id = Column(ForeignKey("products.id", ondelete="CASCADE"))
-    product = relationship("Product", backref="items", lazy="joined")
+    order = Column(ForeignKey("orders.id", ondelete="CASCADE"))
+    order_id = relationship("Order", backref="items", lazy="joined")
+    product = Column(ForeignKey("products.id", ondelete="CASCADE"))
+    product_id = relationship("Product", backref="items", lazy="joined")
     created_at = Column(Date, default=func.current_date())
     updated_at = Column(Date, default=func.current_date(), onupdate=func.current_date())
 
