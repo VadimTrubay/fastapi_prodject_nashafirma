@@ -1,15 +1,12 @@
 from fastapi import Depends, HTTPException, status, APIRouter, Security, BackgroundTasks, Request
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer, OAuth2PasswordRequestForm
-
-from sqlalchemy.orm import Session
-
 from nashafirma_fastapi.conf import detail
 from nashafirma_fastapi.database.db import get_db
-from nashafirma_fastapi.database.models import User
-from nashafirma_fastapi.schemas.users import UserModel, UserResponse, TokenModel, RequestEmail
 from nashafirma_fastapi.repository import users as repository_users
+from nashafirma_fastapi.schemas.users import UserModel, UserResponse, TokenModel, RequestEmail
 from services.auth import auth_service
 from services.email import send_email
+from sqlalchemy.orm import Session
 
 router = APIRouter(prefix="/auth", tags=['auth'])
 security = HTTPBearer()
@@ -35,9 +32,8 @@ async def signup(
     return new_user
 
 
-
 @router.post("/login",
-             response_model=TokenModel
+             response_model=TokenModel,
              )
 async def login(
         body: OAuth2PasswordRequestForm = Depends(),
