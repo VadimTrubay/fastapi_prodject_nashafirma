@@ -14,7 +14,6 @@ class Settings(BaseSettings):
     mail_server: str
     redis_host: str
     redis_port: int
-    # redis_password: int
     CLOUDINARY_NAME: str
     CLOUDINARY_API_KEY: str
     CLOUDINARY_API_SECRET: str
