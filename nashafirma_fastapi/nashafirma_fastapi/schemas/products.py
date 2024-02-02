@@ -7,6 +7,13 @@ class ProductModel(BaseModel):
     price: float = Field(0, ge=0, le=2500)
 
 
+class ProductFromItem(BaseModel):
+    product: str
+
+    class Config:
+        from_attributes = True
+
+
 class ProductResponse(ProductModel):
     id: int = Field(1, gt=0)
     created_at: date
