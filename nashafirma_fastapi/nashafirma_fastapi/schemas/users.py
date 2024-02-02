@@ -11,11 +11,11 @@ class UserModel(BaseModel):
     phone: str = Field(max_length=25)
 
 
-class UserResponse(UserModel):
+class UserResponse(BaseModel):
     id: int
     username: str
     email: EmailStr
-    password: str
+    # password: str
     first_name: str | None
     last_name: str | None
     phone: str | None
@@ -29,7 +29,7 @@ class UserResponse(UserModel):
         from_attributes = True
 
 
-class UserFromOrder(UserModel):
+class UserFromOrder(BaseModel):
     username: str
 
     class Config:
