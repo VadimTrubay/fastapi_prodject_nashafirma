@@ -20,8 +20,8 @@ class Order(Base):
     __tablename__ = "orders"
     id = Column(Integer, primary_key=True, index=True)
     done = Column(Boolean, default=False)
-    user = Column(ForeignKey("users.id", ondelete="CASCADE"))
-    user_id = relationship("User", backref="orders", lazy="joined")
+    user_id = Column(ForeignKey("users.id", ondelete="CASCADE"))
+    user = relationship("User", backref="orders", lazy="joined")
     created_at = Column(Date, default=func.current_date())
     updated_at = Column(Date, default=func.current_date(), onupdate=func.current_date())
 
@@ -31,10 +31,10 @@ class Item(Base):
     id = Column(Integer, primary_key=True, index=True)
     weight = Column(Float, nullable=True, default=0)
     note = Column(String, nullable=True)
-    order = Column(ForeignKey("orders.id", ondelete="CASCADE"))
-    order_id = relationship("Order", backref="items", lazy="joined")
-    product = Column(ForeignKey("products.id", ondelete="CASCADE"))
-    product_id = relationship("Product", backref="items", lazy="joined")
+    order_id = Column(ForeignKey("orders.id", ondelete="CASCADE"))
+    order = relationship("Order", backref="items", lazy="joined")
+    product_id = Column(ForeignKey("products.id", ondelete="CASCADE"))
+    product = relationship("Product", backref="items", lazy="joined")
     created_at = Column(Date, default=func.current_date())
     updated_at = Column(Date, default=func.current_date(), onupdate=func.current_date())
 
