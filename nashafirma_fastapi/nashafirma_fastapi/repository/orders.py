@@ -23,7 +23,7 @@ async def get_orders(limit: int, current_user: User, offset: int, db: Session):
 
 async def create(body: OrderCreate, current_user: User, db: Session):
     order = Order(**body.model_dump())
-    order.user = current_user.id
+    order.user_id = current_user.id
     if current_user.confirmed:
         db.add(order)
         db.commit()
