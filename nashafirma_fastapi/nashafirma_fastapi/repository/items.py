@@ -21,9 +21,10 @@ async def get_items_by_order(order_id: int, limit: int, offset: int, db: Session
 
 async def create(body: ItemCreate, db: Session):
     item = Item(**body.model_dump())
-    db.add(item)
-    db.commit()
-    db.refresh(item)
+    if item:
+        db.add(item)
+        db.commit()
+        db.refresh(item)
     return item
 
 
