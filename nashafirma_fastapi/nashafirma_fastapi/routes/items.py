@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, status, Depends, Query, HTTPException
 from nashafirma_fastapi.database.db import get_db
 from nashafirma_fastapi.repository import items as repository_items
-from nashafirma_fastapi.schemas.items import ItemModel, ItemResponse
+from nashafirma_fastapi.schemas.items import ItemModel, ItemResponse, ItemCreate
 from sqlalchemy.orm import Session
 
 router = APIRouter(prefix="/items", tags=["items"])
@@ -29,10 +29,13 @@ async def all_items_by_order(
              status_code=status.HTTP_201_CREATED
              )
 async def create_item(
-        body: ItemModel,
+        body: ItemCreate,
         db: Session = Depends(get_db)
 ):
-    result = await repository_items.create(body, db)
+    try:
+        result = await repository_items.create(body, db)
+    except:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Order not found")
     if result is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="item not found")
     return result
