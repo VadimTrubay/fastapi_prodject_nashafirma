@@ -2,6 +2,9 @@ from datetime import date
 
 from pydantic import BaseModel, Field
 
+from nashafirma_fastapi.schemas.orders import OrderFromItem
+from nashafirma_fastapi.schemas.products import ProductFromItem
+
 
 class ItemModel(BaseModel):
     order: int = Field(gt=0)
@@ -10,16 +13,32 @@ class ItemModel(BaseModel):
     note: str = Field(max_length=250)
 
 
-class ItemResponse(ItemModel):
+class ItemResponse(BaseModel):
     id: int
-    order: int
-    product: int
-    created_at: date
-    updated_at: date
+    order: OrderFromItem
+    order_id: int
+    product: ProductFromItem
+    product_id: int
+    # created_at: date
+    # updated_at: date
 
     class Config:
         from_attributes = True
 
 
-class ItemCreate(ItemModel):
-    pass
+class ItemFromOrder(BaseModel):
+    id: int
+    order: OrderFromItem
+    order_id: int
+    product: str
+    product_id: int
+
+    class Config:
+        from_attributes = True
+
+
+class ItemCreate(BaseModel):
+    order_id: int
+    product_id: int
+    weight: float
+    note: str
