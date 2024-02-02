@@ -16,7 +16,7 @@ router = APIRouter(prefix="/orders", tags=["orders"])
             status_code=status.HTTP_200_OK
             )
 async def all_orders(
-        limit: int = Query(3, ge=0, le=100),
+        limit: int = Query(10, ge=0, le=100),
         offset: int = 0,
         current_user: User = Depends(auth_service.get_current_user),
         db: Session = Depends(get_db)
@@ -33,7 +33,7 @@ async def all_orders(
 async def search_orders(
         db: Session = Depends(get_db),
         current_user: User = Depends(auth_service.get_current_user),
-        limit: int = Query(3, ge=0, le=100),
+        limit: int = Query(10, ge=0, le=100),
         offset: int = 0,
         query: str | None = None
 ):
