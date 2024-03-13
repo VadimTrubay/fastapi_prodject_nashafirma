@@ -8,13 +8,15 @@ async def get_order_by_id(current_user: User, order_id: int, db: Session):
     if current_user.is_superuser:
         order = db.query(Order).filter_by(id=order_id).first()
     else:
-        order = db.query(Order).filter_by(id=order_id, user=current_user.id).first()
+        order = db.query(Order).filter_by(
+            id=order_id, user=current_user.id).first()
     return order
 
 
 async def get_orders(limit: int, current_user: User, offset: int, db: Session):
     if current_user.is_superuser:
-        orders = db.query(Order).order_by(Order.created_at).limit(limit).offset(offset).all()
+        orders = db.query(Order).order_by(
+            Order.created_at).limit(limit).offset(offset).all()
     else:
         orders = db.query(Order).order_by(Order.created_at).filter_by(user=current_user.id).limit(limit).offset(
             offset).all()
