@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "0.109.0"
-uvicorn = "0.26.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
 sqlalchemy = "2.0.25"
 psycopg2 = "2.9.9"
 redis = "5.0.1"
@@ -24,6 +24,9 @@ cloudinary = "^1.38.0"
 python-multipart = "^0.0.6"
 fastapi-limiter = "^0.1.6"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
 
 [build-system]
 requires = ["poetry-core"]
