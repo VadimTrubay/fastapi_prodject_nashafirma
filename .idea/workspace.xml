@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bdb27b4-f0fd-4e9a-b646-c6346b9ae30b" name="Changes" comment="" />
+    <list default="true" id="6bdb27b4-f0fd-4e9a-b646-c6346b9ae30b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/28b2d4ff9b3d_last2.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/28b2d4ff9b3d_last2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/4c172c3a5003_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/4c172c3a5003_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/6ee629690dc8_last1.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/6ee629690dc8_last1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/eef52485ad29_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/eef52485ad29_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/fe96ab879d3c_last.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/fe96ab879d3c_last.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/conf/detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/conf/detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/repository/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/repository/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/repository/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/repository/orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/routes/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/routes/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/routes/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/routes/orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/routes/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/routes/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/routes/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/routes/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/schemas/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/schemas/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nashafirma_fastapi/utils/py_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/nashafirma_fastapi/utils/py_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/email.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +63,14 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/work_it/github/django_progect_nashafirma",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/work_it/github/tekra_api_app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.externalTools",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -156,6 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705672540084</updated>
       <workItem from="1725798560335" duration="18000" />
+      <workItem from="1730540144644" duration="2052000" />
     </task>
     <servers />
   </component>

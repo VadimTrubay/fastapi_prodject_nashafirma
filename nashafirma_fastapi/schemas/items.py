@@ -1,5 +1,3 @@
-from datetime import date
-
 from pydantic import BaseModel, Field
 
 from nashafirma_fastapi.schemas.orders import OrderFromItem

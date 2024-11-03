@@ -109,7 +109,7 @@ class Auth:
                 return email
             else:
                 raise self.credentials_exception
-        except JWTError as e:
+        except JWTError:
             raise self.credentials_exception
 
     async def get_current_user(

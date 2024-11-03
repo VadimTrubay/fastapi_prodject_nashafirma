@@ -17,8 +17,8 @@ security = HTTPBearer()
 
 @router.get("/me", response_model=UserResponse)
 async def get_user_me(
-        current_user: User = Depends(auth_service.get_current_user),
-        db: Session = Depends(get_db),
+    current_user: User = Depends(auth_service.get_current_user),
+    db: Session = Depends(get_db),
 ):
     result = await repository_users.get_me(current_user, db)
     if result is None:
@@ -30,9 +30,9 @@ async def get_user_me(
 
 @router.patch("/me/", response_model=UserResponse)
 async def update_user(
-        body: UserUpdate,
-        current_user: User = Depends(auth_service.get_current_user),
-        db: Session = Depends(get_db),
+    body: UserUpdate,
+    current_user: User = Depends(auth_service.get_current_user),
+    db: Session = Depends(get_db),
 ):
     result = await repository_users.update(current_user, body, db)
     if result is None:
@@ -44,9 +44,9 @@ async def update_user(
 
 @router.patch("/avatar", response_model=UserResponse)
 async def update_avatar_user(
-        file: UploadFile = File(),
-        current_user: User = Depends(auth_service.get_current_user),
-        db: Session = Depends(get_db),
+    file: UploadFile = File(),
+    current_user: User = Depends(auth_service.get_current_user),
+    db: Session = Depends(get_db),
 ):
     cloudinary.config(
         cloud_name=settings.CLOUDINARY_NAME,

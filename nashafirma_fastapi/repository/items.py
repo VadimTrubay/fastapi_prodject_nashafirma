@@ -29,7 +29,7 @@ async def create(body: ItemCreate, db: Session):
 
 
 async def update(item_id: int, body: ItemModel, db: Session):
-    item = await  get_item_by_id(item_id, db)
+    item = await get_item_by_id(item_id, db)
     if item:
         item.order = body.order
         item.product = body.product
@@ -40,7 +40,7 @@ async def update(item_id: int, body: ItemModel, db: Session):
 
 
 async def remove(item_id: int, db: Session):
-    item = await  get_item_by_id(item_id, db)
+    item = await get_item_by_id(item_id, db)
     if item:
         db.delete(item)
         db.commit()

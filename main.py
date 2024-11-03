@@ -38,7 +38,11 @@ async def add_process_time_header(request: Request, call_next):
 
 BASE_DIR = Path(".")
 
-app.mount("/static", StaticFiles(directory=BASE_DIR / "nashafirma_fastapi" / "static"), name="static")
+app.mount(
+    "/static",
+    StaticFiles(directory=BASE_DIR / "nashafirma_fastapi" / "static"),
+    name="static",
+)
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
@@ -68,7 +72,9 @@ def healthchecker(db: Session = Depends(get_db)):
         # Make request
         result = db.execute(text("SELECT 1")).fetchone()
         if result is None:
-            raise HTTPException(status_code=500, detail="Database is not configured correctly")
+            raise HTTPException(
+                status_code=500, detail="Database is not configured correctly"
+            )
         return {"message": "Welcome to FastAPI!", "stage": "database is OK!"}
     except Exception as e:
         print(e)

@@ -2,7 +2,7 @@ import logging
 
 
 def get_logger(name):
-    _format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s - '
+    _format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s - "
     file = "nf_logs.log"
 
     file_handler = logging.FileHandler(file)
